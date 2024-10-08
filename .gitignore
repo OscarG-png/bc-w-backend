@@ -1,0 +1,82 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+/.pnpm-store/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+.log
+*.out
+*.pid
+*.pid.lock
+*.gz
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.sublime-*
+
+# MacOS
+*.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.history
+
+# Output directories
+/dist/
+/build/
+/out/
+/coverage/
+/temp/
+/tmp/
+/cache/
+/public/assets/
+*.js.map
+*.css.map
+
+# Testing
+/coverage/
+/
