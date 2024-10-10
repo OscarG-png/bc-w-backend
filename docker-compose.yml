@@ -1,0 +1,25 @@
+services:
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports:
+            - "3001:3001"
+        volumes:
+            - ./backend:/app
+        environment:
+            - NODE_ENV=development
+        working_dir: /app
+
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./frontend:/app
+        environment:
+            - NODE_ENV=development
+        depends_on:
+            - backend
