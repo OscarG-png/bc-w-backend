@@ -1,22 +1,27 @@
-import fastify from "fastify";
+import express from "express";
 require("dotenv").config();
+const { createHandler } = require("graphql-http/lib/use/express");
+const { buildSchema } = require("graphql");
 
-const server = fastify({ logger: true });
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3001;
 
-// Define a simple route
-server.get("/", async (request, reply) => {
-    return { message: "Hello, Fastify with TypeScript!" };
-});
-
-const start = async () => {
-    try {
-        await server.listen({ port, host: "0.0.0.0" }); // Listen on all interfaces
-        console.log(`Server listening on http://localhost:${port}`); // Use the dynamic port
-    } catch (err) {
-        server.log.error(err);
-        process.exit(1);
+const schema = buildSchema(`
+    type Query {
+        hello: String
     }
+`);
+const root = {
+    hello() {
+        return "Hello from Graphql!";
+    },
 };
 
-start();
+const app = express();
+app.all(
+    "/graphql",
+    createHandler({
+        schema: schema,
+        rootValue: root,
+    })
+);
+app.listen(port);

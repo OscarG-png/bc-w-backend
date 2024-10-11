@@ -15,9 +15,9 @@ services:
         image: postgres:latest
         restart: always
         environment:
-            POSTGRES_USER: user # Change to your desired username
-            POSTGRES_PASSWORD: password # Change to your desired password
-            POSTGRES_DB: mydatabase # Change to your desired database name
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: mydatabase
 
     frontend:
         build:
