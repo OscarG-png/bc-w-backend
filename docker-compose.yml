@@ -11,6 +11,14 @@ services:
             - NODE_ENV=development
         working_dir: /app
 
+    db:
+        image: postgres:latest
+        restart: always
+        environment:
+            POSTGRES_USER: user # Change to your desired username
+            POSTGRES_PASSWORD: password # Change to your desired password
+            POSTGRES_DB: mydatabase # Change to your desired database name
+
     frontend:
         build:
             context: ./frontend
